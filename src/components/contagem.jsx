@@ -24,8 +24,6 @@ function Contagem(props) {
         distance = 499;
       }
     }
-
-    //   clearInterval(startTimer);
   }
 
   setTimeout(() => {
@@ -33,15 +31,15 @@ function Contagem(props) {
   }, 1000);
 
   return (
-    <div className="flex h-[10rem] space-y-5  bg-sky-100 rounded-xl p-2 items-center ">
-      <div className="flex flex-col  w-full">
+    <div className="flex flex-row my-[2rem] w-[24rem] h-[10rem] bg-gradient-to-r from-purple-700 via-purple-800 to-purple-900 p-6 gap-8 rounded-lg border-2 border-purple-500 ">
+      <div className="flex flex-col w-full">
         <div className="text-center space-y-10">
-          <h2 className="text-2xl">{props.evento.nome}</h2>
-          <div className="flex space-x-5 ">
-            <p>dias: {dias} </p>
-            <p>horas: {horas}</p>
-            <p>minutos: {minutos}</p>
-            <p>segundos: {segundos}</p>
+          <h2 className="text-2xl text-purple-300">{props.evento.nome}</h2>
+          <div className="flex space-x-5 text-purple-100">
+            <p>Dias {dias <= 9 ? '0' + dias : dias} </p>
+            <p>Horas {horas <= 9 ? '0' + horas : horas}</p>
+            <p>Minutos {minutos <= 9 ? '0' + minutos : minutos}</p>
+            <p>Segundos {segundos <= 9 ? '0' + segundos : segundos}</p>
           </div>
         </div>
       </div>
